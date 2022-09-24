@@ -7,6 +7,12 @@ LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
 STYLE_CHOICES = sorted([(item, item) for item in get_all_styles()])
 
 
+####################################################################################
+# We can actually also save ourselves some time by using the ModelSerializer class #
+# as we'll see later, but for now we'll keep our serializer definition explicit.   #
+####################################################################################
+
+
 class Snippet(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, default='')
